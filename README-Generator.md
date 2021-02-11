@@ -2,7 +2,9 @@
 
 ## **Description**
 
-An application to quickly and efficiently generate a README file.
+An application that allows a user to quickly and efficiently generate a README file.
+
+Everything in the Table of Contents was generated through the use of this application and the gif was added separately.
 
 ## **Table of Contents**
 * [Description](#Description)
