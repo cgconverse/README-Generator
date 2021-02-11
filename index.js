@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Questions for the user
+// Array of questions for the user
 const questions = [
     {
       type: 'input',
@@ -26,7 +26,7 @@ const questions = [
     {
       type: 'input',
       message: 'What are the contribution guidelines?',
-      name: 'contribution',
+      name: 'contributions',
     },
     {
       type: 'input',
@@ -65,8 +65,8 @@ function writeToFile(fileName, data) {
     //Installation
     //Usage
     //License
-    //Contributing 
-    //Tests
+    //Contributions 
+    //Testing
     //Questions
 
 `# **${data.title}
@@ -78,8 +78,8 @@ ${data.description}
 * [Description](#Description)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
+* [Contributions](#Contributions)
+* [Testing](#Testing)
 * [License](#License)
 * [Questions](#Questions)
 
@@ -90,19 +90,18 @@ ${data.installation}
 ${data.usage}
 
 ## **License**
-This project is covered under the ${data.license}.
+This project is covered under the ${data.license} license.
 
-## **Contributing**
-${data.contributing}
+## **Contributions**
+${data.contributions}
 
-## **Tests**
-${data.tests}
+## **Testing**
+${data.testing}
 
 ## **Questions**
 Please contact me if you have any questions.
-<br>
+
 Email: ${data.email}
-<br>
 GitHub: https://github.com/${data.github}`,
         (err) => err ? console.error(err) : 
         console.log("Your README file has been created!")
