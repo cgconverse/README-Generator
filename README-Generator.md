@@ -29,7 +29,7 @@ Please contact me about contributing to this project.
 Run 'npm test' in your terminal.
 
 ## **Demo**
-![README Generator Demo](demo\README-Generator.gif)
+![README Generator Demo](demo/README-Generator.gif)
 
 ## **Questions**
 Please contact me if you have any questions.
