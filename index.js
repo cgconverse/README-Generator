@@ -30,7 +30,7 @@ const questions = [
     },
     {
       type: 'input',
-      message: 'Please provide instructions for testing',
+      message: 'Please provide instructions for testing.',
       name: 'testing',
     },
     {
@@ -55,28 +55,67 @@ const questions = [
       message: 'Please enter your email address.',
       name: 'email'
   },
-    ]
+]
 
-// function to write README file
+// This function writes the README file 
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', data, function (err) {
-        if (err) {
-            console.log(err);
-            throw err;
-        }
-    });
+    //Project title
+    fs.writeFile(`${fileName}.md`,
+    //Table of Contents 
+    //Installation
+    //Usage
+    //License
+    //Contributing 
+    //Tests
+    //Questions
+
+`# **${data.title}
+
+## **Description**
+${data.description}
+
+## **Table of Contents**
+* [Description](#Description)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [License](#License)
+* [Questions](#Questions)
+
+## **Installation**
+${data.installation}
+
+## **Usage**
+${data.usage}
+
+## **License**
+This project is covered under the ${data.license}.
+
+## **Contributing**
+${data.contributing}
+
+## **Tests**
+${data.tests}
+
+## **Questions**
+Please contact me if you have any questions.
+<br>
+Email: ${data.email}
+<br>
+GitHub: https://github.com/${data.github}`,
+        (err) => err ? console.error(err) : 
+        console.log("Your README file has been created!")
+    );
+
 }
 
 // This will initialize the program 
 function init() {
-  inquirer
-  .prompt(questions)
-  .then(function(data) {
-      console.log("Success!");
-      writeToFile("README.md", generateMarkdown(data));
-      console.log("Generating README")
-  })
-} 
+    inquirer.prompt(questions).then(answers => {
+        writeToFile(answers.title, answers);
+    });
+}
 
 // This function calls to initialize the README generator 
 init();
